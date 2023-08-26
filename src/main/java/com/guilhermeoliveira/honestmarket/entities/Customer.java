@@ -19,12 +19,23 @@ public class Customer {
 	
 	@OneToOne
 	private Occupation occupation;
+	
+	public Customer() {
+	}
 
 	public Customer(Long id, String name, String email, Occupation occupation) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.occupation = occupation;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
