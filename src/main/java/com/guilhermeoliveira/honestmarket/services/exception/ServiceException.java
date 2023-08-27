@@ -1,14 +1,14 @@
 package com.guilhermeoliveira.honestmarket.services.exception;
 
-public class CustomerServiceException extends RuntimeException {
+public class ServiceException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 
-	public CustomerServiceException(String message) {
+	public ServiceException(String message) {
         super(message);
     }
 
-    public CustomerServiceException(String message, Throwable cause) {
+    public ServiceException(String message, Throwable cause) {
         super(message, cause);
     }
 }

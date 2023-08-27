@@ -1,34 +1,21 @@
-package com.guilhermeoliveira.honestmarket.entities;
+package com.guilhermeoliveira.honestmarket.dto;
 
 import java.util.Objects;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+public class OccupationDTO {
 
-@Entity
-public class Occupation {
+	private Integer id;
+	private String occupation;
+	private String description;
 
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    public OccupationDTO() {
+    }
 
-    private String occupation;
-    private String description;
-	
-	@OneToOne
-	private Sector sector;
-	
-	public Occupation() {
-	}
-	
-	public Occupation(Integer id, String occupation, String description, Sector sector) {
+	public OccupationDTO(Integer id, String occupation, String description) {
+		super();
 		this.id = id;
 		this.occupation = occupation;
 		this.description = description;
-		this.sector = sector;
 	}
 
 	public Integer getId() {
@@ -55,14 +42,6 @@ public class Occupation {
 		this.description = description;
 	}
 
-	public Sector getSector() {
-		return sector;
-	}
-
-	public void setSector(Sector sector) {
-		this.sector = sector;
-	}
-	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -76,7 +55,7 @@ public class Occupation {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Occupation other = (Occupation) obj;
+		OccupationDTO other = (OccupationDTO) obj;
 		return Objects.equals(id, other.id);
 	}
 }

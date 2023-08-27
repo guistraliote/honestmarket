@@ -4,17 +4,20 @@ import java.util.Objects;
 
 public class CustomerDTO {
 
-    private Long id;
+	private Long id;
     private String name;
     private String email;
+    
+    private Integer occupationId;
 
     public CustomerDTO() {
     }
 
-	public CustomerDTO(Long id, String name, String email) {
+	public CustomerDTO(Long id, String name, String email, Integer occupationId) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
+		this.occupationId = occupationId;
 	}
 
 	public void setId(Long id) {
@@ -39,6 +42,14 @@ public class CustomerDTO {
 
 	public Long getId() {
 		return id;
+	}
+
+	public Integer getOccupationId() {
+		return occupationId;
+	}
+
+	public void setOccupationId(Integer occupationId) {
+		this.occupationId = occupationId;
 	}
 
 	@Override
